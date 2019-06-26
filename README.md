@@ -1,15 +1,18 @@
-# Query on JSON Object
+## Query on JSON Object
 A library for using "AND" or "OR" operator on JSON object.
 
-Valid JSON Object only
+#### Valid JSON Object only
 
 This library will do the "AND" or "OR" operation on complex JSON object.
 
+> Method description
 
-/*Method description*/
+```
 qjson.query(JSON Object, parameter for operation (should be valid object), condition);
+```
 
-Example: 
+## Example: 
+```
 let jsonObj = [
     {
         make:  "toyota"
@@ -33,9 +36,11 @@ let jsonObj = [
         type: "sedan"
     }
 ]
+```
 
-/*Performing AND operation*/
+> Performing AND operation
 
+```
 let result = qjson.query(jsonObj, {make: "toyota", model: "camry"}, "AND");
 
 output: [
@@ -54,8 +59,11 @@ output: [
         type: "sedan"
     }
 ]
+```
 
-/*Performing OR operation*/
+> Performing OR operation
+
+```
 let result = qjson.query(jsonObj, {make: "toyota", model: "camry"}, "OR");
 
 output: [
@@ -81,4 +89,4 @@ output: [
         type: "sedan"
     }
 ]
-
+```

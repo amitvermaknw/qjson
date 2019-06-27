@@ -3,16 +3,21 @@ A library for using "AND" or "OR" operator on JSON object.
 
 #### Valid JSON Object only
 
-This library will do the "AND" or "OR" operation on complex JSON object.
+This library will do the **AND** or **OR** operation on complex JSON object for **NodeJs** Apps.
+Parameters for condition should be minimun 2 to maximum 10 key.
 
 > Method description
 
 ```
-qjson.query(JSON Object, parameter for operation (should be valid object), condition);
+var query = require('queryonjson');
+query.qjson(JSON Object, parameter for operation (should be valid object), condition);
+
 ```
 
 ## Example: 
 ```
+var query = require('queryonjson')
+
 let jsonObj = [
     {
         make:  "toyota"
@@ -41,7 +46,7 @@ let jsonObj = [
 > Performing AND operation
 
 ```
-let result = qjson.query(jsonObj, {make: "toyota", model: "camry"}, "AND");
+let result = query.qjson(jsonObj, {make: "toyota", model: "camry"}, "AND");
 
 output: [
     {
@@ -64,7 +69,7 @@ output: [
 > Performing OR operation
 
 ```
-let result = qjson.query(jsonObj, {make: "toyota", model: "camry"}, "OR");
+let result = query.qjson(jsonObj, {make: "toyota", model: "camry"}, "OR");
 
 output: [
     {

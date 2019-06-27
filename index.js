@@ -1,6 +1,6 @@
-var qjson = {
 
-    query(obj, param, cond) {
+
+var query  =  function(obj, param, cond) {
 
         if ((typeof obj === 'object' || Array.isArray(obj)) && typeof param === 'object' && typeof cond === 'string') {
 
@@ -128,7 +128,6 @@ var qjson = {
             return "Input is incorrect!"
         }
     }
-};
 
 var filter = {
 
@@ -525,3 +524,4 @@ var getKey = {
     }
 }
 
+module.exports = { qjson: query };
